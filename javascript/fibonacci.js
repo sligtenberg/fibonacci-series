@@ -1,5 +1,14 @@
 function fibonacci(num) {
   // type your code here
+
+  if (num === 0) return 0
+  else if (num === 1) return 1
+
+  let p = [0, 1]
+  while (p.length <= num) {
+    p.push(p[p.length-1] + p[p.length-2])
+  }
+  return p[p.length-1]
 }
 
 if (require.main === module) {
@@ -10,7 +19,17 @@ if (require.main === module) {
   console.log("");
 
   console.log("Expecting: 1");
+  console.log("=>", fibonacci(1));
+
+  console.log("");
+
+  console.log("Expecting: 1");
   console.log("=>", fibonacci(2));
+
+  console.log("");
+
+  console.log("Expecting: 2");
+  console.log("=>", fibonacci(3));
 
   console.log("");
 

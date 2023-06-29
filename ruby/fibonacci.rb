@@ -1,5 +1,17 @@
 def fibonacci(num)
   # type your code in here
+  if num < 2 
+    return num
+  else
+    i = 0
+    last_two = [0, 1]
+    until i == num do
+      sum = last_two[0] + last_two[1]
+      last_two = [last_two[1], sum]
+      i += 1
+    end
+    return last_two[0]
+  end
 end
 
 if __FILE__ == $PROGRAM_NAME
